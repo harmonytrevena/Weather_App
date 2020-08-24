@@ -6,11 +6,11 @@ const submitFormButton = document.getElementById("submitForm");
 const defaultCity = "Atlanta"
 
 const getWeather = (city) => {
-  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=728cd06e7a37efcfe88515c1a806d287`;
+  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=728cd06e7a37efcfe88515c1a806d287&units=imperial`;
 
   get(url).then(function (fetchResponse) {
-      weatherIs.innerHTML = fetchResponse.main.temp; // add math here to convert
-      // console.log(fetchResponse);
+      weatherIs.innerHTML = (fetchResponse.main.temp + " °C"); // add math here to convert
+      console.log(fetchResponse);
   });
 }
 
