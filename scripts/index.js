@@ -1,30 +1,31 @@
 'use strict'
 
-const chuckSays = document.getElementById('chuckSays');
-const refreshQuote = document.getElementById('refreshQuote');
+const weatherIs = document.getElementById('weatherIs');
+// const changeCity = document.getElementById('changeCity');
 const submitFormButton = document.getElementById("submitForm");
-const defaultCategory = "dev"
+const defaultCity = "Atlanta"
 
-const getQuote = (category) => {
-  const url = `https://api.chucknorris.io/jokes/random?category=${category}`;
+const getWeather = (city) => {
+  const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=728cd06e7a37efcfe88515c1a806d287`;
 
   get(url).then(function (fetchResponse) {
-      chuckSays.innerHTML = fetchResponse.value;
+      weatherIs.innerHTML = fetchResponse.main.temp; // add math here to convert
+      // console.log(fetchResponse);
   });
 }
 
-refreshQuote.addEventListener('click', function (event) {
-  event.preventDefault();
-  getQuote(defaultCategory);
-});
+// changeCity.addEventListener('click', function (event) {
+//   event.preventDefault();
+//   getWeather(defaultCity);
+// });
 
 submitFormButton.addEventListener('click', function (e) {
   e.preventDefault();
-  const userInput = document.getElementById("categoryInput");
-  const category = userInput.value;
-  getQuote(category);
+  const userInput = document.getElementById("cityInput");
+  const city = userInput.value;
+  getWeather(city);
 });
 
 (function () {
-  getQuote(defaultCategory)
+  getWeather(defaultCity)
 })();

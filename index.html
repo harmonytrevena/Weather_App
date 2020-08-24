@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Chuck Norris Quotes</title>
+        <title>Weather App</title>
         <link rel="stylesheet" href="styles/styles.css" />
     </head>
 
@@ -14,21 +14,20 @@
 
     <!-- Header -->
     <header class="header">
-        <h1>CHUCK NORRIS QUOTES</h1>
+        <h1>Tell Me The Weather!</h1>
     </header>
 
     <!-- Content -->
     <div class="flex-container">
         <section class="sub-content-upper">
-            <h2>Content.</h2>
-            <p id ="chuckSays"></p>
-            <button id="refreshQuote">Click Me</button>
+            <h2>The weather is:</h2>
+            <p id ="weatherIs"></p>
             <form>
                 <label>
-                Choose a Category:
-                <input type="text" id="categoryInput" value="" placeholder="categoryChoice" required/>
+                Pick a City:
+                <input type="text" id="cityInput" value="" required/>
                 </label>
-                <button type="submit" id="submitForm">Get a Quote</button>
+                <button type="submit" id="submitForm">Check the Temp!</button>
             </form>
         </section>
     </div>
@@ -36,7 +35,7 @@
     <!-- Hero -->
     <section class="hero">
         <div class="background"> 
-            <img src="images/Chuck_Image_Updated.png">
+             <!-- <img src="images/Chuck_Image_Updated.png"> -->
         </div>
     </section>
 
